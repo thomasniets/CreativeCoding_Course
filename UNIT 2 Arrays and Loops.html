@@ -1,0 +1,55 @@
+<html>
+    <body>
+         <canvas width="600" height="600">
+        
+         </canvas>
+
+         <script> 
+            let canvas = document.querySelector('canvas');
+            let context = canvas.getContext('2d'); // apparently can be 3d
+            
+            context.strokeStyle = 'pink';
+            context.lineWidth = 2;
+
+            for (let i=0;i<5;i++){
+                for (let j=0;j<5;j++){
+                    
+                    let w = 50;
+                    let h = 50;
+                    let gap = 5;
+                    let x = 2 + i * (w+gap);
+                    let y = 2 + j * (h+gap); 
+
+                    context.beginPath();
+                    context.rect(x,y,w,h);
+                    if(i==j || Math.random()<0.5){
+                        context.rect(x+8,y+8,w-16,h-16);
+                    }
+                    context.stroke();
+
+                }
+                
+            }
+
+            //--------- The Basics ---------
+            const gravity = 9.81; // can be declared outside loops
+
+            let years = []; // array
+            for (let i=0;i<10;i++){
+                years.push(2040*i)
+            }
+            console.log(years)
+
+            let menu = ['starter','main','dessert','drinks']
+            for (let i=0; i<menu.length; i++) {
+                console.log(menu[i]);
+            }
+
+            // or with for each
+            menu.forEach(item => {
+                console.log(item);
+            })
+             //--------- the end ---------
+         </script>
+    </body>
+</html>
